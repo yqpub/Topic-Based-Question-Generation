@@ -31,7 +31,7 @@ for i in range(len(files)):  # Iterating through all the files.
 
 	for data in file_name:										# the data in the file
 		for question in data['questions']:						# question property of the object.
-				words = question['questionType'].split()		# Splitting the question into individual words for finding the length of the questions.
+				words = question['questionText'].split()		# Splitting the question into individual words for finding the length of the questions.
 				if len(words) <= max_question_word_length:		# We want to remove the questions which contains more than 50 words.
 					word_tokens = tokenizer.tokenize(question['questionText'])
 					filtered_question = [w for w in word_tokens if not w in stop_words]
